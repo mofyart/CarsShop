@@ -1,0 +1,70 @@
+﻿@model Car
+@*<div class="col-lg-4">
+        <img class="img-thumbnail" src="@Model.img" alt="@Model.name" />
+        <h2>Модель: @Model.name</h2>
+        <p>@Model.size</p>
+        <p>@Model.shortDesc</p>
+        <p>Цена: @Model.price.ToString("")</p>
+        <p>
+            <a class="btn btn-warning" asp-controller="ShopCart"
+               asp-action="addToCart" asp-route-id="@Model.id">Добавить в корзину</a>
+        </p>
+        <p>
+           <a class="btn btn-warning" asp-controller="OneCart"
+               asp-action="OneCar" asp-route-id="@Model.id">Узнать больше</a>
+        </p>
+    </div>*@
+<style>
+    .contaier .card .content .color span {
+        width: 45px;
+        height: 26px;
+        text-align: center;
+        line-height: 16px;
+        display: inline-block;
+        color: #111;
+        background: #fff;
+        border-radius: 4px;
+        font-weight: 500;
+       
+    }
+    
+    </style>
+
+<div class="contaier">
+        <div class="card ">
+            <div class="ig">
+                <img src="@Model.img" />
+                <h2> @Model.name</h2>
+
+                <div class="content">
+                    <div class="price">
+                        <h3>Цена:</h3>
+                        <span>@Model.price $</span>
+                    </div>
+                    <div class="size">
+
+                        <h3>Размер памяти:</h3>
+                        <span>@Model.size gb</span>
+
+                    </div>
+
+                    <div class="color">
+                        <h3>Цвет:</h3>
+
+                        <span> @Model.color</span>
+
+                    </div>
+                    <p>
+                        <a class="btn" asp-controller="ShopCart"
+                           asp-action="addToCart" asp-route-id="@Model.id">Добавить в корзину</a>
+                    </p>
+                    <p>
+                        <a class="btn " asp-controller="OneCart"
+                           asp-action="OneCar" asp-route-id="@Model.id">Узнать больше</a>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

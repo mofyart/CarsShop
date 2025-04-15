@@ -1,0 +1,7 @@
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ArtemDB;Trusted_Connection=True;"
+  }
+
+}

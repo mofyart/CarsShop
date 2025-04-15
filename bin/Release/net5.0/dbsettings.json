@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=PhoneSh.mssql.somee.com; Database=PhoneSh; Persist Security Info=false; User ID=Y6K-irX-bxx-6DE_SQLLogin_1; Password=9rbi552gsz; MultipleActiveResultSets=True; Trusted_Connection=False;"
+  }
+}

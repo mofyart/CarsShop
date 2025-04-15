@@ -1,0 +1,241 @@
+﻿@model OneCarViewModel
+    <style>
+        .cotaier {
+            position: relative;
+            z-index: 10;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+            .cotaier .card {
+                position: relative;
+                width: 500px;
+                height: 600px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.05);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+            }
+
+                .cotaier .card .ig {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 39px;
+                    transition: 0.5s ease-in-out;
+                }
+
+                    .cotaier .card .ig img {
+                        width: 200px;
+                        height: 200px;
+                        margin: -200px 0 20px;
+                        transition: 0.5s ease-in-out;
+                    }
+
+                .cotaier .card:hover .ig img {
+                    transform: scale(1.4);
+                }
+
+                .cotaier .card .ig h2 {
+                    margin: 20px;
+                    font-weight: 400;
+                }
+
+                .cotaier .card .content {
+                    position: absolute;
+                    bottom: -150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    transition: 0.5s ease-in-out;
+                }
+
+
+
+
+                .cotaier .card .content .size,
+                .cotaier .card .content .color,
+                .cotaier .card .content .price {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 8px 20px;
+                }
+
+                    .cotaier .card .content .size h3,
+                    .cotaier .card .content .color h3,
+                    .cotaier .card .content .price h3 {
+                        font-weight: 400;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        margin-right: 10px;
+                    }
+
+                    .cotaier .card .content .size span {
+                        height: 26px;
+                        text-align: center;
+                        line-height: 17px;
+                        display: inline-block;
+                        color: #111;
+                        background: #fff;
+                        border-radius: 4px;
+                        font-weight: 500;
+                        transition: 0.5s;
+                        cursor: pointer;
+                    }
+
+                        .cotaier .card .content .size span:hover {
+                            background: #111;
+                            color: #fff;
+                        }
+
+
+                    .cotaier .card .content .price span {
+                        height: 20px;
+                        line-height: 11px;
+                        font-weight: 500;
+                        border-radius: 50%;
+                        color: black;
+                    }
+
+                .cotaier .card .content a {
+                    position: relative;
+                    display: inline-block;
+                    background: black;
+                    border-radius: 40px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    color: white;
+                }
+
+        .cotaier .card .content .color span {
+            width: 40px;
+            height: 26px;
+            text-align: center;
+            line-height: 16px;
+            display: inline-block;
+            color: #111;
+            background: #fff;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .rounded {
+            counter-reset: li;
+            list-style: none;
+            font: 14px;
+            padding: 0;
+            text-shadow: 0 1px 0;
+        }
+
+            .rounded a {
+                position: relative;
+                display: block;
+                padding: .10em .10em .10em 4em;
+                margin: .5em 0;
+                background: #eff3fc;
+                color:black;
+                text-decoration: none;
+                border-radius: .3em;
+                transition: .10s ease-out;
+            }
+
+                .rounded a:hover {
+                    background: white;
+                }
+
+                    .rounded a:hover:before {
+                        transform: rotate(360deg);
+                    }
+
+                .rounded a:before {
+                    content: counter(li);
+                    counter-increment: li;
+                    position: absolute;
+                    left: -1.3em;
+                    top: 50%;
+                    margin-top: -1.3em;
+                    background: #e8ebfe;
+                    height: 2em;
+                    width: 2em;
+                    line-height: 2em;
+                    border: .3em solid #111;
+                    text-align: center;
+                    font-weight: bold;
+                    border-radius: 2em;
+                    transition: all .3s ease-out;
+                }
+        .conte {
+            color: #edc251;
+            padding: 0 0 400px 50px;
+            font-size: 110%;
+            text-indent: 60px;
+        }
+        .conte h2 {
+            font: 50px;
+            color: black;
+            margin: 10px 0 20px 0;
+            text-indent: 0;
+        }
+
+        .conte p {
+            margin: 0 0 40px 0;
+            text-align: justify;
+        }
+    </style>
+    <div class="cotaier">
+
+
+        <div class="card ">
+            <div class="ig">
+                <img src="@Model.OneCar.img" />
+                <h2> @Model.OneCar.name</h2>
+
+                <div class="content">
+                    <div class="price">
+                        <h3>Цена:</h3>
+                        <span>@Model.OneCar.price $</span>
+                    </div>
+
+                    <div class="size">
+
+                        <h3>Размер паямяти:</h3>
+                        <span>@Model.OneCar.size gb</span>
+
+                    </div>
+
+                    <div class="color">
+                        <h3>Цвет:</h3>
+
+                        <span>@Model.OneCar.color</span>
+
+                    </div>
+                    <p>
+                        <a class="btn" asp-controller="ShopCart"
+                           asp-action="addToCart" asp-route-id="@Model.OneCar.id">Добавить в корзину</a>
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="conte">
+            <h2>Информация:</h2>
+
+            <ol class="rounded">
+                <li><a href="#">Операционная система: @Model.OneCar.oper</a></li>
+                <li><a href="#">Дисплей: @Model.OneCar.dis </a></li>
+                <li><a href="#">Разрешение дисплея: @Model.OneCar.raz</a></li>
+                <li><a href="#">Процессор: @Model.OneCar.proz</a></li>
+                <li><a href="#">Объем оперативной памяти: @Model.OneCar.ob</a></li>
+            </ol>
+
+        </div>
+    </div>

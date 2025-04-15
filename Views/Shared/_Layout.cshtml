@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Style2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+
+
+
+
+            <ul>
+                <li><a clas="top" asp-controller="Home" asp-action="Index">Главная</a></li>
+                <li><a class="top" asp-controller="Cars" asp-action="List" asp-route-category="">Телефоны</a></li>
+                <li><a class="top" asp-controller="Cars" asp-action="List" asp-route-category="premium">Премиум класса телефоны</a></li>
+                <li><a class="top" asp-action="List" asp-route-category="cheap">Бюджетный телефоны</a></li>
+                <li><a class="top" asp-action="List" asp-route-category="new">Новинки</a></li>
+                <li><a class="top" asp-controller="ShopCart" asp-action="Index">Корзина</a></li>
+
+            </ul>
+
+            <form class="d-flex" method="get" asp-controller="Home" asp-action="Index">
+                <input value="@ViewData["Getemployeedetails"]" name="Empsearch" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+                <button value="Search" class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+
+
+
+        </nav>
+    </header>
+   
+    <div class="container mt-5">
+        @RenderBody()
+
+    </div>
+    <footer class="container">
+        <p class="float-end"></p>
+        <p>© 2021 Интернет магазин. Все права защищены</p>
+    </footer>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/Js.js"></script>
+</body>
+</html>

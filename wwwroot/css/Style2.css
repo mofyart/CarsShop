@@ -1,0 +1,187 @@
+﻿body {
+    background: #ffffff;
+}
+
+ul {
+    padding-bottom: 40px;
+    margin-bottom: -15px;
+    margin-left: 30px;
+    padding-top: 30px;
+    display: flex;
+}
+
+    ul li {
+        list-style: none;
+        margin: 0 20px;
+        transition: 0.3s;
+    }
+
+        ul li a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            padding: 5px;
+            font-size: 17px;
+            font-family: sans-serif;
+            color: black;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+    ul:hover li a {
+        transform: scale(1.5s);
+        opacity: .2;
+        filter: blur(5px);
+    }
+
+    ul li a:hover {
+        transform: scale(2);
+        opacity: 1;
+        filter: blur(0);
+    }
+    a:hover{
+        color:white;
+    }
+    ul li a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background: black;
+        transition: transform 0.5s;
+        transform-origin: right;
+        transform: scaleX(0);
+        z-index: -1;
+    }
+
+    ul li a:hover:before {
+        transition: transform 0.5s;
+        transform-origin: left;
+        transform: scaleY(1);
+    }
+.contaier {
+    position: relative;
+    z-index: 10;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 20px;
+}
+
+    .contaier .card {
+        position: relative;
+       
+        width: 400px;
+        height: 600px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+    }
+
+        .contaier .card .ig {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 39px;
+            transition: 0.5s ease-in-out;
+        }
+
+            .contaier .card .ig img {
+                width: 200px;
+                height: 200px;
+                margin: -200px 0 20px;
+                transition: 0.5s ease-in-out;
+            }
+
+        .contaier .card:hover .ig img {
+            transform: scale(1.4);
+        }
+
+        .contaier .card .ig h2 {
+            margin: 20px;
+            font-weight: 400;
+        }
+
+        .contaier .card .content {
+            position: absolute;
+            bottom: -200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: 0.5s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .contaier .card:hover .content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50pm);
+        }
+
+
+        .contaier .card .content .size,
+        .contaier .card .content .color,
+        .contaier .card .content .price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 20px;
+        }
+
+            .contaier .card .content .size h3,
+            .contaier .card .content .color h3,
+            .contaier .card .content .price h3 {
+                font-weight: 400;
+                font-size: 18px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-right: 10px;
+            }
+
+            .contaier .card .content .size span {
+               
+                height: 26px;
+                text-align: center;
+                line-height: 17px;
+                display: inline-block;
+                color: #111;
+                background: #fff;
+                border-radius: 4px;
+                font-weight: 500;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+
+                .contaier .card .content .size span:hover {
+                    background: #111;
+                    color: #fff;
+                }
+
+
+            .contaier .card .content .price span {
+                height: 20px;
+                line-height: 11px;
+                font-weight: 500;
+                border-radius: 50%;
+                color: black;
+            }
+
+        .contaier .card .content a {
+            position: relative;
+            display: inline-block;
+            background: black;
+            border-radius: 40px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: white;
+        }
+ 
